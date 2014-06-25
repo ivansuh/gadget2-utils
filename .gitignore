@@ -1,0 +1,6 @@
+*.o
+*.mod
+gadget2header
+gadget2ascii
+ascii2gadget
+dflocal_clmax
