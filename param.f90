@@ -11,6 +11,8 @@ MODULE PARAM
          real, parameter :: Omega_L = 0.713793
          real, parameter :: h0 = 0.6932
          real, parameter :: sigma8 = 0.8209349 ! at z = 0
+! Initial redshift is placed here: used only in gadget_write()!!!
+	 real, parameter :: Z_in = 50.
 ! Base Physical Constants
          real, parameter :: rhoc0 = 2.7755E+11
          real, parameter :: G = 6.67259E-11

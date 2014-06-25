@@ -184,8 +184,8 @@ MODULE gadget_op
             npartot(2)=N_tot
             masses=0.
             masses(2)=particle_mass(box_dp,real(NGRID))/GADGET_MUNIT
-            aexpn=1./(1.+100.)
-            z=100.
+            aexpn=1./(1.+Z_in)
+            z=Z_in
             SF=0
             Fb=0
             Cool=0
