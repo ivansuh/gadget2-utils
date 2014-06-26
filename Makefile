@@ -12,7 +12,7 @@ FITS = -lcfitsio
 
 OPTFLAGS = -O2 -mcmodel large -shared_intel
 
-OBJ = param.o fits.o cluster.o dflocal_clmax.o 
+OBJ = param.o density.o fits.o cluster.o dflocal_clmax.o 
 GOBJ = funcs.o gadget_op.o 
 PRG = dflocal_clmax gadget2header gadget2ascii ascii2gadget
 

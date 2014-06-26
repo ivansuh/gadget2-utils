@@ -2,9 +2,12 @@ MODULE PARAM
       IMPLICIT NONE
 !        Basic variables
 !       
-         integer, parameter :: NGRID = 512.
-         integer, parameter :: NTOTAL = NGRID*NGRID*NGRID
-         real, parameter :: BoxSize = 100.
+!         integer, parameter :: NGRID = 512.
+	 integer :: NGRID
+	 integer :: NTOTAL
+	 real    :: BoxSize
+!         integer, parameter :: NTOTAL = NGRID*NGRID*NGRID
+!         real, parameter :: BoxSize = 100.
          integer, parameter :: MSIZE = 500000
 ! Cosmological parameters from WMAP9 combined data 
          real, parameter :: Omega_m = 0.286207

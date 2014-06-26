@@ -5,21 +5,17 @@
        USE FITS
        USE CLUSTER
        USE PARAM
+       USE DENSITY
        IMPLICIT NONE
        
        integer :: NB(6,3)
-       real :: densloc(NGRID,NGRID,NGRID)
-       real :: densglob(NGRID,NGRID,NGRID)
-       logical(1) :: map(NGRID,NGRID,NGRID)
+!       real :: densloc(NGRID,NGRID,NGRID)
+!       real :: densglob(NGRID,NGRID,NGRID)
+!       logical(1) :: map(NGRID,NGRID,NGRID)
        character(80) ifile1,ifile2,ofile1
        real :: fac_cell,dthr
        integer :: i,j,k,NG
-! 
-! Variables init section 
-!
-       fac_cell=float(NGRID)/BoxSize
-       NB=0; NB(1,1)=1; NB(3,1)=-1
-       NB(4,2)=-1; NB(6,3)=-1
+
 !=============================================================!
 !		User interface				      !
 !=============================================================!
@@ -31,6 +27,17 @@
         read(*,'(a)') ofile1
         print '(1x,a,$)', 'Enter minimal local density threshold: '
         read(*,'(f8.2)') dthr
+        print '(1x,a,$)', ' NGRID in one direction: '
+        read(*,'(i10)') NGRID
+        print '(1x,a,$)', ' BoxSize in one direction: '
+        read(*,'(f8.2)') BoxSize
+! 
+! Variables init section 
+!
+       fac_cell=float(NGRID)/BoxSize
+       NB=0; NB(1,1)=1; NB(3,1)=-1
+       NB(4,2)=-1; NB(6,3)=-1
+       allocate(densloc(NGRID,NGRID,NGRID), densglob(NGRID,NGRID,NGRID), map(NGRID,NGRID,NGRID))
 !=============================================================!
 !		Fits file reading			      !
 !=============================================================!
